@@ -1,39 +1,106 @@
 {
   "project_info": {
-    "project_number": "763710677037",
-    "firebase_url": "https://magic-print-8db31.firebaseio.com",
-    "project_id": "magic-print-8db31",
-    "storage_bucket": "magic-print-8db31.appspot.com"
+    "project_number": "790367394106",
+    "firebase_url": "https://fariid-3bc5b.firebaseio.com",
+    "project_id": "fariid-3bc5b",
+    "storage_bucket": "fariid-3bc5b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:763710677037:android:3c7d6470405dd51d",
+        "mobilesdk_app_id": "1:790367394106:android:918fb9120bc69ab8849803",
         "android_client_info": {
           "package_name": "com.beingdev.magicprint"
         }
       },
       "oauth_client": [
         {
-          "client_id": "763710677037-oqv89qlsh8ef5dcj5mqe9k0stkbsgdgr.apps.googleusercontent.com",
+          "client_id": "790367394106-vs9r679eab2qj82i823afi67omtmon0k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.beingdev.magicprint",
+            "certificate_hash": "c33f84a61916e0e7fcf80f49a967297ab29274d5"
+          }
+        },
+        {
+          "client_id": "790367394106-cbd2nukbcfk3trcq3sk6suq9039cf7am.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQK0ptquntWfeTTNVqVH7lDWeP-rLR4K8"
+          "current_key": "AIzaSyAxzhcr46VOPFfIBfYlHNzpzKfLQciOexU"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790367394106-cbd2nukbcfk3trcq3sk6suq9039cf7am.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790367394106:android:5132f60434c89c9c849803",
+        "android_client_info": {
+          "package_name": "com.fariid.theapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790367394106-cjic7g18ioopnen60ga946psp1jpkpqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fariid.theapp",
+            "certificate_hash": "28bdb3eca402716c4143b18d141c6c2e789d0eca"
+          }
         },
-        "ads_service": {
-          "status": 2
+        {
+          "client_id": "790367394106-9lu827ocqnhth5fcju6fiihkpsjotpki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fariid.theapp",
+            "certificate_hash": "2547005cbd1fe9d187044158d139091c6ec9423e"
+          }
+        },
+        {
+          "client_id": "790367394106-itu2oktapb55djlh69165u7qqcsbtkiv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fariid.theapp",
+            "certificate_hash": "98107ca962eb809fb05d7efce3734d47fd6699e0"
+          }
+        },
+        {
+          "client_id": "790367394106-h1nnsv565o6vtmlj02dh5msjnlq7ivb7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fariid.theapp",
+            "certificate_hash": "c33f84a61916e0e7fcf80f49a967297ab29274d5"
+          }
+        },
+        {
+          "client_id": "790367394106-cbd2nukbcfk3trcq3sk6suq9039cf7am.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxzhcr46VOPFfIBfYlHNzpzKfLQciOexU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790367394106-cbd2nukbcfk3trcq3sk6suq9039cf7am.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

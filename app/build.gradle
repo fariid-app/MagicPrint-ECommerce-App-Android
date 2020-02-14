@@ -1,68 +1,84 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.1"
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.beingdev.magicprint"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 29
         versionCode 1
         versionName "1.1"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         useLibrary 'org.apache.http.legacy'
         manifestPlaceholders = [onesignal_app_id               : "5c3d7b9b-1874-463f-8081-1c3439ccb3ea",
                                 onesignal_google_project_number: "REMOTE"]
         multiDexEnabled true
     }
     buildTypes {
-        debug {
-            minifyEnabled true
-            useProguard true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'),
-                    'proguard-rules.pro'
-        }
+//        debug {
+//            minifyEnabled true
+////            useProguard true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+//                    'proguard-rules.pro'
+//        }
         release {
             minifyEnabled false
             shrinkResources false
-            useProguard true
+//            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    implementation 'com.onesignal:OneSignal:3.+@aar'
+
+//    configurations {
+//        all*.exclude group: 'com.google.android.gms', module: 'play-services-places'
+//        all*.exclude group: 'com.google.android.gms', module: 'play-services-tagmanager-api'
+//        all*.exclude group: 'com.google.android.gms', module: 'play-services-internal-api'
+//    }
+
+    implementation 'com.onesignal:OneSignal:3.12.6@aar'
 
     //database operation lib
     implementation 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
 
     //google play services
-    implementation 'com.google.android.gms:play-services-gcm:11.0.1'
+//    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+//
+//    implementation 'com.google.android.gms:play-services-analytics:17.0.0'
+//
+//    implementation 'com.google.android.gms:play-services-location:17.0.0'
 
-    implementation 'com.google.android.gms:play-services-analytics:11.0.1'
+//    implementation 'com.google.android.gms:play-services:12.0.1'
 
-    implementation 'com.google.android.gms:play-services-location:11.0.1'
+    // Analytics & Crashlytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
-    implementation 'com.google.android.gms:play-services:11.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    implementation 'com.android.support:support-v4:27.0.2'
+    implementation 'com.google.android.material:material:1.1.0'
 
-    implementation 'com.android.support:design:27.0.2'
-
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:27.+'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
 
-    implementation 'com.android.support:customtabs:27.+'
+    implementation 'androidx.browser:browser:1.2.0'
 
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.easing:library:2.1@aar'
 
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
@@ -70,21 +86,21 @@ dependencies {
 
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
-    implementation('com.mikepenz:aboutlibraries:6.0.1@aar') {
+    implementation('com.mikepenz:aboutlibraries:6.0.2@aar') {
         transitive = true
     }
-    implementation("com.mikepenz:materialdrawer:6.0.2@aar") {
+    implementation('com.mikepenz:materialdrawer:6.0.3@aar') {
         transitive = true
     }
     implementation 'com.squareup.picasso:picasso:2.3.2'
 
     implementation 'com.daimajia.slider:library:1.1.5@aar'
 
-    implementation "com.android.support:recyclerview-v7:27.+"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
-    implementation 'com.android.support:cardview-v7:27.+'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
-    implementation "com.android.support:support-annotations:27.+"
+    implementation 'androidx.annotation:annotation:1.1.0'
 
     implementation 'com.webianks.library:easy-feedback:1.0.2'
 
@@ -92,9 +108,9 @@ dependencies {
 
     implementation('com.mikepenz:crossfadedrawerlayout:1.0.1@aar')
 
-    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'com.android.volley:volley:1.1.0'
 
     implementation 'com.kaopiz:kprogresshud:1.1.0'
 
@@ -106,16 +122,16 @@ dependencies {
     implementation 'com.github.yesidlazaro:GmailBackground:1.2.0'
 
     //Field and method binding for Android views which uses annotation processing
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
 
-    implementation 'com.airbnb.android:lottie:2.2.5'
+    implementation 'com.airbnb.android:lottie:3.3.1'
 
     implementation 'com.firebaseui:firebase-ui:0.4.4'
 
     //Libraries I've included
-    implementation 'com.google.firebase:firebase-database:9.4.0'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
 
     //Stylish edittextbox
     implementation 'com.github.florent37:materialtextfield:1.0.7'
@@ -127,9 +143,10 @@ dependencies {
     implementation 'com.tomer:fadingtextview:2.5'
 
     // Dexter runtime permissions
-    implementation 'com.karumi:dexter:4.2.0'
+    implementation 'com.karumi:dexter:6.0.2'
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
